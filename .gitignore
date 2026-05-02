@@ -1,0 +1,5 @@
+.agents/
+approval-flow-check.png
+*.log
+.DS_Store
+Thumbs.db
