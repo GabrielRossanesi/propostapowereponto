@@ -91,6 +91,11 @@
       <symbol id="icon-message" viewBox="0 0 24 24">
         <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5A8.48 8.48 0 0 1 21 11z" />
       </symbol>
+      <symbol id="icon-info" viewBox="0 0 24 24">
+        <circle cx="12" cy="12" r="9" />
+        <path d="M12 11v5" />
+        <path d="M12 8h.01" />
+      </symbol>
     </svg>
     <div class="scroll-progress" aria-hidden="true"></div>
     <div class="site-shell">
@@ -785,8 +790,8 @@
               <span class="eyebrow">Investimento</span>
               <h2>Uma plataforma proprietária para organizar crescimento</h2>
               <p>
-                A implantação contempla desenvolvimento sob medida, integrações em fases,
-                treinamento inicial e suporte durante a entrada em operação.
+                A implantação contempla desenvolvimento sob medida, entregas em fases,
+                treinamento inicial e suporte para entrada em operação.
               </p>
             </div>
 
@@ -795,16 +800,61 @@
 
               <!-- Edite os valores abaixo conforme a proposta final aprovada. -->
               <div class="price-row">
-                <span>Investimento inicial</span>
-                <strong>R$ XX.XXX,XX</strong>
+                <div class="price-copy">
+                  <span class="price-title">
+                    Investimento inicial
+                    <span
+                      class="info-badge"
+                      tabindex="0"
+                      aria-label="R$ 2.500,00 no início e R$ 2.500,00 na entrega final."
+                    >
+                      <svg class="ui-icon" aria-hidden="true"><use href="#icon-info"></use></svg>
+                      <span class="info-tooltip" role="tooltip">
+                        R$ 2.500,00 no início e R$ 2.500,00 na entrega final.
+                      </span>
+                    </span>
+                  </span>
+                  <small>R$ 2.500,00 no início e R$ 2.500,00 na entrega final.</small>
+                </div>
+                <strong>R$ 5.000,00</strong>
               </div>
               <div class="price-row">
-                <span>Suporte/manutenção</span>
-                <strong>R$ X.XXX,XX</strong>
+                <div class="price-copy">
+                  <span class="price-title">
+                    Suporte / Manutenção
+                    <span
+                      class="info-badge"
+                      tabindex="0"
+                      aria-label="Custos adicionais, como hospedagem de US$ 10 por mês, ficam por conta do cliente."
+                    >
+                      <svg class="ui-icon" aria-hidden="true"><use href="#icon-info"></use></svg>
+                      <span class="info-tooltip" role="tooltip">
+                        Custos adicionais, como hospedagem (US$ 10/mês), ficam por conta do cliente.
+                      </span>
+                    </span>
+                  </span>
+                  <small>Custos adicionais, como hospedagem (US$ 10/mês), ficam por conta do cliente.</small>
+                </div>
+                <strong>R$ 300,00</strong>
               </div>
               <div class="price-row">
-                <span>Prazo estimado</span>
-                <strong>XX dias</strong>
+                <div class="price-copy">
+                  <span class="price-title">
+                    Prazo estimado
+                    <span
+                      class="info-badge"
+                      tabindex="0"
+                      aria-label="A entrega será feita em partes, com prazo máximo estimado em 90 dias."
+                    >
+                      <svg class="ui-icon" aria-hidden="true"><use href="#icon-info"></use></svg>
+                      <span class="info-tooltip" role="tooltip">
+                        A entrega será feita em partes, com prazo máximo estimado em 90 dias.
+                      </span>
+                    </span>
+                  </span>
+                  <small>A entrega será feita em partes, com prazo máximo estimado em 90 dias.</small>
+                </div>
+                <strong>90 dias</strong>
               </div>
 
               <ul class="investment-list">
@@ -816,8 +866,8 @@
               </ul>
 
               <p class="fine-print">
-                Os valores podem variar conforme a profundidade das integrações e escopo final
-                aprovado.
+                Custos variáveis de infraestrutura e integrações externas poderão ser definidos
+                conforme a necessidade do projeto.
               </p>
             </article>
           </div>
