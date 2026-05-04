@@ -2444,6 +2444,16 @@ h1 {
   z-index: 1;
 }
 
+.team-section .team-layout {
+  grid-template-columns: minmax(360px, 0.92fr) minmax(520px, 1.08fr);
+  gap: clamp(34px, 5vw, 68px);
+  align-items: center;
+}
+
+.team-section .section-heading {
+  max-width: 640px;
+}
+
 .team-section .section-heading h2,
 .team-section .section-heading p,
 .investment-section .section-heading h2,
@@ -2461,6 +2471,20 @@ h1 {
   text-wrap: balance;
 }
 
+.team-section .section-heading h2 {
+  max-width: 640px;
+  font-size: clamp(2.2rem, 3.25vw, 2.95rem);
+  line-height: 1.05;
+}
+
+.team-title span {
+  display: block;
+}
+
+.team-title span:last-child {
+  white-space: nowrap;
+}
+
 .team-section .eyebrow,
 .investment-section .eyebrow,
 .final-cta .eyebrow {
@@ -2469,23 +2493,80 @@ h1 {
   background: rgba(255, 255, 255, 0.08);
 }
 
+.team-eyebrow .ui-icon {
+  width: 15px;
+  height: 15px;
+}
+
 .team-dashboard {
-  padding: 20px;
+  display: grid;
+  gap: 12px;
+  padding: 22px;
   border-color: rgba(255, 255, 255, 0.14);
-  border-radius: 14px;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 16% 0%, rgba(36, 107, 254, 0.16), transparent 36%),
+    radial-gradient(circle at 86% 8%, rgba(20, 166, 106, 0.13), transparent 34%),
+    rgba(255, 255, 255, 0.08);
+  box-shadow: 0 28px 80px rgba(0, 0, 0, 0.18);
 }
 
 .team-card,
 .person-row,
 .team-stats span {
   border: 1px solid rgba(255, 255, 255, 0.1);
-  border-radius: 8px;
-  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.075);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
 }
 
 .team-card {
-  padding: 20px;
+  padding: 18px;
+}
+
+.header-card {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) auto;
+  gap: 14px;
+  align-items: center;
+  min-height: 120px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.13), rgba(255, 255, 255, 0.07)),
+    rgba(255, 255, 255, 0.08);
+}
+
+.team-card-icon,
+.person-avatar {
+  display: grid;
+  flex: 0 0 auto;
+  place-items: center;
+  color: #dbeafe;
+  background:
+    linear-gradient(135deg, rgba(36, 107, 254, 0.28), rgba(20, 166, 106, 0.18)),
+    rgba(255, 255, 255, 0.08);
+}
+
+.team-card-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: 14px;
+}
+
+.team-card-icon .ui-icon {
+  width: 21px;
+  height: 21px;
+}
+
+.header-card em {
+  align-self: start;
+  padding: 7px 10px;
+  border-radius: 999px;
+  color: #a7f3d0;
+  background: rgba(20, 166, 106, 0.13);
+  font-size: 0.72rem;
+  font-style: normal;
+  font-weight: 900;
+  white-space: nowrap;
 }
 
 .team-card strong,
@@ -2496,7 +2577,7 @@ h1 {
 .team-card strong {
   margin: 6px 0 4px;
   color: white;
-  font-size: 1.5rem;
+  font-size: clamp(1.35rem, 2.4vw, 1.78rem);
 }
 
 .team-card small,
@@ -2506,15 +2587,38 @@ h1 {
 
 .person-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) 160px;
+  grid-template-columns: minmax(0, 1fr) minmax(150px, 0.42fr);
   gap: 18px;
   align-items: center;
-  margin-top: 12px;
-  padding: 16px;
+  padding: 15px 16px;
   transition:
     transform 220ms ease,
     border-color 220ms ease,
+    box-shadow 220ms ease,
     background 220ms ease;
+}
+
+.person-row:hover,
+.team-stats span:hover {
+  transform: translateY(-2px);
+  border-color: rgba(188, 208, 255, 0.18);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 18px 38px rgba(0, 0, 0, 0.12);
+}
+
+.person-profile {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  gap: 12px;
+}
+
+.person-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  font-weight: 950;
 }
 
 .person-row strong {
@@ -2523,28 +2627,46 @@ h1 {
   color: white;
 }
 
+.person-progress {
+  display: grid;
+  gap: 7px;
+}
+
+.person-progress small {
+  justify-self: end;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.76rem;
+  font-weight: 900;
+}
+
 progress {
   width: 100%;
-  height: 10px;
+  height: 11px;
   overflow: hidden;
   border: 0;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 progress::-webkit-progress-bar {
-  background: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.12);
 }
 
 progress::-webkit-progress-value {
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), #8ee8bb);
+  background:
+    linear-gradient(90deg, var(--green), #8ee8bb),
+    var(--green);
+  box-shadow: 0 0 18px rgba(20, 166, 106, 0.28);
   transition: width 900ms ease;
 }
 
 progress::-moz-progress-bar {
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--green), #8ee8bb);
+  background:
+    linear-gradient(90deg, var(--green), #8ee8bb),
+    var(--green);
+  box-shadow: 0 0 18px rgba(20, 166, 106, 0.28);
   transition: width 900ms ease;
 }
 
@@ -2561,19 +2683,41 @@ progress::-moz-progress-bar {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 10px;
-  margin-top: 12px;
 }
 
 .team-stats span {
-  padding: 14px;
+  display: grid;
+  min-height: 104px;
+  align-content: center;
+  gap: 5px;
+  padding: 16px 14px;
   color: rgba(255, 255, 255, 0.72);
   text-align: center;
+  transition:
+    transform 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.team-stats .ui-icon {
+  justify-self: center;
+  width: 18px;
+  height: 18px;
+  color: #bcd0ff;
 }
 
 .team-stats strong {
   display: block;
   color: white;
-  font-size: 1.24rem;
+  font-size: 1.42rem;
+  line-height: 1;
+}
+
+.team-stats small {
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 0.78rem;
+  font-weight: 760;
 }
 
 .phase-grid {
@@ -2902,7 +3046,10 @@ progress::-moz-progress-bar {
 .js .reveal .operation-panel article,
 .js .reveal .price-row,
 .js .reveal .investment-list li,
-.js .reveal .payment-cta {
+.js .reveal .payment-cta,
+.js .team-dashboard.reveal .team-card,
+.js .team-dashboard.reveal .person-row,
+.js .team-dashboard.reveal .team-stats span {
   transform: translateY(12px);
   opacity: 0;
   transition:
@@ -2916,7 +3063,10 @@ progress::-moz-progress-bar {
 .js .reveal.is-visible .operation-panel article,
 .js .reveal.is-visible .price-row,
 .js .reveal.is-visible .investment-list li,
-.js .reveal.is-visible .payment-cta {
+.js .reveal.is-visible .payment-cta,
+.js .team-dashboard.reveal.is-visible .team-card,
+.js .team-dashboard.reveal.is-visible .person-row,
+.js .team-dashboard.reveal.is-visible .team-stats span {
   transform: translateY(0);
   opacity: 1;
 }
@@ -2952,6 +3102,22 @@ progress::-moz-progress-bar {
 
 .js .reveal.is-visible .payment-cta {
   transition-delay: 340ms;
+}
+
+.js .team-dashboard.reveal.is-visible .person-row:nth-of-type(2) {
+  transition-delay: 80ms;
+}
+
+.js .team-dashboard.reveal.is-visible .person-row:nth-of-type(3) {
+  transition-delay: 150ms;
+}
+
+.js .team-dashboard.reveal.is-visible .person-row:nth-of-type(4) {
+  transition-delay: 220ms;
+}
+
+.js .team-dashboard.reveal.is-visible .team-stats span {
+  transition-delay: 300ms;
 }
 
 @keyframes heroEntrance {
@@ -3092,7 +3258,10 @@ progress::-moz-progress-bar {
   .js .reveal .operation-panel article,
   .js .reveal .price-row,
   .js .reveal .investment-list li,
-  .js .reveal .payment-cta {
+  .js .reveal .payment-cta,
+  .js .team-dashboard.reveal .team-card,
+  .js .team-dashboard.reveal .person-row,
+  .js .team-dashboard.reveal .team-stats span {
     transform: none;
     opacity: 1;
   }
@@ -3109,6 +3278,14 @@ progress::-moz-progress-bar {
 
   .hero {
     min-height: auto;
+  }
+
+  .team-section .team-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .team-section .section-heading {
+    max-width: 680px;
   }
 
   .module-grid,
@@ -3294,6 +3471,10 @@ progress::-moz-progress-bar {
     grid-template-columns: 1fr;
   }
 
+  .person-progress small {
+    justify-self: start;
+  }
+
   .final-cta {
     width: min(calc(100% - 28px), var(--max));
     margin-bottom: 48px;
@@ -3377,6 +3558,10 @@ progress::-moz-progress-bar {
     max-width: 100%;
     font-size: 0.98rem;
     line-height: 1.72;
+  }
+
+  .team-title span:last-child {
+    white-space: normal;
   }
 
   .concept-topline {
