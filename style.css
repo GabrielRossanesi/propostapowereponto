@@ -158,40 +158,34 @@ a {
   height: 46px;
   place-items: center;
   overflow: hidden;
-  border: 1px solid rgba(36, 107, 254, 0.18);
-  border-radius: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 13px;
   color: white;
   background:
-    linear-gradient(135deg, #111827, #1d4ed8 54%, #14a66a),
+    radial-gradient(circle at 28% 18%, rgba(255, 255, 255, 0.16), transparent 28%),
+    linear-gradient(145deg, #0b1220 0%, #173d91 56%, #0f8f60 100%),
     #111827;
-  box-shadow: 0 14px 28px rgba(36, 107, 254, 0.22);
+  box-shadow:
+    0 14px 28px rgba(36, 107, 254, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.16);
+}
+
+.brand-symbol::after {
+  position: absolute;
+  inset: 1px;
+  border-radius: 12px;
+  content: "";
+  background: linear-gradient(145deg, rgba(255, 255, 255, 0.14), transparent 42%);
+  pointer-events: none;
 }
 
 .brand-symbol span {
   position: relative;
   z-index: 1;
-  font-size: 0.74rem;
+  font-size: 0.76rem;
   font-weight: 950;
-  letter-spacing: 0.04em;
-  animation: hubPulse 3.8s ease-in-out infinite;
-}
-
-.brand-symbol i {
-  position: absolute;
-  right: 8px;
-  width: 7px;
-  height: 7px;
-  border-radius: 999px;
-  background: rgba(255, 255, 255, 0.82);
-}
-
-.brand-symbol i:first-of-type {
-  top: 9px;
-}
-
-.brand-symbol i:last-of-type {
-  bottom: 9px;
-  background: rgba(255, 255, 255, 0.54);
+  letter-spacing: 0.06em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.22);
 }
 
 .brand-identity {
