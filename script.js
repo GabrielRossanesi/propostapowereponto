@@ -1,6 +1,7 @@
 const revealElements = document.querySelectorAll(".reveal");
 const progressBars = document.querySelectorAll("progress[data-value]");
 const scrollProgress = document.querySelector(".scroll-progress");
+const topbar = document.querySelector(".topbar");
 const infoButtons = document.querySelectorAll(".info-badge");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
@@ -60,6 +61,7 @@ const updateScrollProgress = () => {
   const progress = scrollable > 0 ? scrollTop / scrollable : 0;
 
   scrollProgress.style.transform = `scaleX(${Math.min(1, Math.max(0, progress))})`;
+  topbar?.classList.toggle("is-scrolled", scrollTop > 12);
 };
 
 updateScrollProgress();

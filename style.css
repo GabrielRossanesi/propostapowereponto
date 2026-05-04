@@ -31,6 +31,7 @@ html {
   max-width: 100%;
   overflow-x: hidden;
   scroll-behavior: smooth;
+  scroll-padding-top: 112px;
 }
 
 body {
@@ -109,21 +110,37 @@ a {
 }
 
 .topbar {
-  position: sticky;
-  z-index: 50;
-  top: 16px;
+  position: fixed;
+  z-index: 1000;
+  top: 14px;
+  left: 50%;
   display: flex;
   align-items: center;
   justify-content: space-between;
   width: min(calc(100% - 32px), var(--max));
   min-height: 72px;
-  margin: 16px auto 0;
+  margin: 0;
   padding: 10px 12px;
-  border: 1px solid rgba(255, 255, 255, 0.72);
+  border: 1px solid rgba(255, 255, 255, 0.78);
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.78);
-  box-shadow: 0 18px 45px rgba(17, 24, 39, 0.08);
-  backdrop-filter: blur(20px);
+  background: rgba(255, 255, 255, 0.76);
+  box-shadow: 0 16px 42px rgba(17, 24, 39, 0.08);
+  transform: translateX(-50%);
+  backdrop-filter: blur(22px);
+  transition:
+    min-height 220ms ease,
+    border-color 220ms ease,
+    background 220ms ease,
+    box-shadow 220ms ease,
+    top 220ms ease;
+}
+
+.topbar.is-scrolled {
+  top: 10px;
+  min-height: 66px;
+  border-color: rgba(17, 24, 39, 0.09);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 50px rgba(17, 24, 39, 0.14);
 }
 
 .brand {
@@ -289,6 +306,10 @@ a {
   padding: 104px 0;
 }
 
+[id] {
+  scroll-margin-top: 118px;
+}
+
 .section-pad > *,
 .hero-copy,
 .hero-visual,
@@ -304,7 +325,7 @@ a {
 .hero {
   display: block;
   min-height: min(760px, calc(100svh - 104px));
-  padding-top: 94px;
+  padding-top: 134px;
   padding-bottom: 84px;
 }
 
@@ -3134,7 +3155,7 @@ progress::-moz-progress-bar {
 
   .hero {
     gap: 34px;
-    padding-top: 58px;
+    padding-top: 118px;
   }
 
   h1 {
@@ -3331,7 +3352,7 @@ progress::-moz-progress-bar {
 
   .hero {
     gap: 28px;
-    padding-top: 46px;
+    padding-top: 108px;
   }
 
   .hero-copy {
